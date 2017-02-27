@@ -3,7 +3,7 @@
 <body>
 
 <!-- creating int,string and boolean variables -->
-<div ng-app="" ng-init="number_val=2;string_val='Anija';boolean_val=TRUE">
+<div ng-app="" ng-init="number_val=2;string_val='Anija';boolean_val=true">
 </div>
 <!-- creating object type variable -->
 <div ng-app="" ng-init="person={firstname:'Anija',lastname: 'Thomas'}">
@@ -20,12 +20,21 @@
         </li>
       </ul>
  </div>
-<script>    
+<script>
+// add values of an array    
 var values = [1,2,4];  
 angular.forEach(values, function(value, key) {  
   document.write(value++);  
   document.write("");  
-});  
+});
+
+// toggle boolean value
+var i = true; 
+$scope.toogle = function(i)
+  {
+    i.booleanVal = !i.booleanVal 
+
+  }; 
 </script>  
 
 </body>
