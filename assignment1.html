@@ -3,7 +3,9 @@
 <body>
 
 <!-- creating int,string and boolean variables -->
-<div ng-app="" ng-init="number_val=2;string_val='Anija';boolean_val=true">
+<div ng-app="" ng-init="number_val=2;string1='Anija';string2='Thomas';boolean_val=true">
+<!-- concatenate strings -->
+	<p>Hi This is {{string1 + " " + string2}}</p>
 </div>
 <!-- creating object type variable -->
 <div ng-app="" ng-init="person={firstname:'Anija',lastname: 'Thomas'}">
