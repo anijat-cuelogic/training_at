@@ -12,6 +12,14 @@
 <div ng-app="" ng-init="marks=[89,74,92]">
 
 </div>
+<div data-ng-controller="DemoController">
+      <ul>
+        <li data-ng-repeat="item in marks">
+          {{marks}}
+          <button data-ng-click="removeItem($index)">Remove</button>
+        </li>
+      </ul>
+ </div>
 <script>    
 var values = [1,2,4];  
 angular.forEach(values, function(value, key) {  
