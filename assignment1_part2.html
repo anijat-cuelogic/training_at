@@ -1,0 +1,32 @@
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<body>
+
+<!-- create object way1 -->
+<div ng-app="" ng-init="person={firstname:'Anija',lastname: 'Thomas'}">
+</div>
+
+<!-- creating array way1 -->
+<div ng-app="" ng-init="marks=[89,74,92]">
+
+</div>
+
+ <script>
+// create object way2    
+function TestCtrl($scope) {
+    $scope.person = {
+        name : "User",
+        phones : [{number: 12345}]
+    };
+
+// create array way2  
+	$scope.telephone = '';
+	$scope.numbers = [];
+
+	$scope.submitNumber = function(){
+  		$scope.numbers.push($scope.telephone);
+	}
+</script>  
+
+</body>
+</html>
