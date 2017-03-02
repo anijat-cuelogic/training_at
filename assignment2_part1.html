@@ -1,0 +1,14 @@
+<script src= "angular.min.js"></script>
+<script src= "assignment2_part1.js"></script>
+ 
+<div ng-app="BasicArithmeticApp" ng-controller="BasicArithmeticController">
+  <p><input type="number" ng-model="a"></p>
+  <p><input type="number" ng-model="b"></p>
+  <p><select ng-model="operator">
+        <option>+</option>
+        <option>*</option>
+        <option>-</option>
+        <option>/</option>
+     </select></p>
+  <p>{{ result() }}</p>
+ </div>
