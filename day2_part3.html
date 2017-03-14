@@ -1,0 +1,36 @@
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+  <body>
+    <div ng-app='myApp' ng-controller="Main">
+        {{[]}}
+    </div>
+    <!-- program using various reserved words in JS -->
+    <script>
+      var myApp = angular.module('myApp', []);
+      myApp.filter('range', function() {
+        return function(input) {
+
+          // loop which will skip the step where i = 3(used 'continue')
+          var text = "";
+          var i;
+          for (i = 0; i < 10; i++) {
+              if (i === 3) { continue; }
+              input.push(i);
+          }
+
+          // loop with a break when val is 3(used 'break')
+          for (i = 0; i < 10; i++) {
+            if (i === 3) { break; }
+            input.push(i);
+          }
+
+          return input;
+        };
+      });
+      function Main($scope){
+      }
+
+    </script>
+
+  </body>
+</html>
