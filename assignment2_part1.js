@@ -1,17 +1,20 @@
 angular.module('BasicArithmeticApp', [])
     .controller('BasicArithmeticController', function($scope) {
         $scope.result = function() {
-            if ($scope.operator == '+') {
-                return $scope.a + App$scope.b;
-            }
-            if ($scope.operator == '-') {
+            switch (operator) {
+            case '+':
+                return $scope.a + $scope.b;
+                break;
+            case '-':
                 return $scope.a - $scope.b;
-            }
-            if ($scope.operator == '*') {
+                break;
+            case '*':
                 return $scope.a * $scope.b;
-            }
-            if ($scope.operator == '/') {
+                break;
+            case '/':
                 return $scope.a / $scope.b;
+                break;
+            default:
             }
         };
     });
