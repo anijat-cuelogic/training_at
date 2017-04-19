@@ -11,16 +11,18 @@ angular.module('BasicHttpAuthExample', [
     'ngCookies'
 ])
  
-.config(['$routeProvider', function ($routeProvider) {
+.config(['$stateProvider', function ($stateProvider) {
 
-    $routeProvider
-        .when('/login', {
+    $stateProvider
+        .state('home.login', {
+            url: '/login',
             controller: 'LoginController',
             templateUrl: 'modules/authentication/views/login.html',
             hideMenus: true
         })
  
-        .when('/', {
+        .state('home', {
+            url: '/',
             controller: 'HomeController',
             templateUrl: 'modules/home/views/home.html'
         })
@@ -31,7 +33,7 @@ angular.module('BasicHttpAuthExample', [
 .run(['$rootScope', '$location', '$cookieStore', '$http',
     function ($rootScope, $location, $cookieStore, $http) {
         // keep user logged in after page refresh
-        $rootScope.globals = $cookieStore.get('globals') || {};
+        $rootScope.globals = localStorage.getItem('globals') || {};
         if ($rootScope.globals.currentUser) {
             $http.defaults.headers.common['Authorization'] = 'Basic ' + $rootScope.globals.currentUser.authdata; // jshint ignore:line
         }

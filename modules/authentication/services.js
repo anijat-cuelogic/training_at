@@ -40,12 +40,12 @@ angular.module('Authentication')
             };
  
             $http.defaults.headers.common['Authorization'] = 'Basic ' + authdata; // jshint ignore:line
-            $cookieStore.put('globals', $rootScope.globals);
+            localStorage.setItem('globals', $rootScope.globals);
         };
  
         service.ClearCredentials = function () {
             $rootScope.globals = {};
-            $cookieStore.remove('globals');
+            localStorage.removeItem('globals');
             $http.defaults.headers.common.Authorization = 'Basic ';
         };
  
